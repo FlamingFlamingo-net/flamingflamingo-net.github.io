@@ -44,6 +44,7 @@
       padding: .45rem .75rem; cursor: pointer; white-space: nowrap; text-decoration: none;
     }
     .print-btn:hover { background: var(--chip); color: var(--fg); }
+    .downloads { display: flex; flex-direction: column; gap: .4rem; align-items: stretch; }
     .summary { margin: 1.5rem 0 0; }
 
     /* Sections */
@@ -79,7 +80,7 @@
     @media (max-width: 560px) {
       main { padding-top: 2rem; }
       header { flex-direction: column-reverse; }
-      .print-btn { align-self: flex-end; }
+      .downloads { flex-direction: row; flex-wrap: wrap; align-self: flex-start; }
       .duo { grid-template-columns: 1fr; gap: 0; }
       .job { grid-template-columns: 1fr; }
     }
@@ -132,9 +133,14 @@
         <li><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li> -->
       </ul>
     </div>
-    <a class="print-btn no-print" href="Anwar-Orozco-CV.pdf" download="Anwar-Orozco-CV.pdf" type="application/pdf">
-      <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download PDF
-    </a>
+    <nav class="downloads no-print" aria-label="Download CV">
+      <a class="print-btn" href="Anwar-Orozco-CV.pdf" download="Anwar-Orozco-CV.pdf" type="application/pdf">
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV as PDF
+      </a>
+      <a class="print-btn" href="Anwar-Orozco-CV.docx" download="Anwar-Orozco-CV.docx" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV as Word (.docx)
+      </a>
+    </nav>
   </header>
 
   <p class="summary">8+ years and 18+ projects in software testing. I build test automation with Playwright and Karate, test Salesforce platforms and lead QA teams in Agile environments.</p>
