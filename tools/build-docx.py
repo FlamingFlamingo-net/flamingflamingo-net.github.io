@@ -17,7 +17,7 @@ OUT = Path(__file__).resolve().parent.parent / "Anwar-Orozco-CV.docx"
 NAME = "Anwar Orozco"
 ROLE = "Senior QA Engineer"
 CONTACT = "Chihuahua, Mexico  ·  amot.anly@gmail.com  ·  flamingflamingo-net.github.io"
-SUMMARY = ("8+ years and 18+ projects in software testing. I build test automation with "
+SUMMARY = ("8+ years and 18+ projects in software testing. I combine manual testing with test automation in "
            "Playwright and Karate, test Salesforce platforms and lead QA teams in Agile environments.")
 SKILLS = [
     ("Automation & AI", "Playwright, Karate, AI workflow, AI automation, Claude Code"),
