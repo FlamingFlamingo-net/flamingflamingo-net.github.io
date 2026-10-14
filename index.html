@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Anwar Orozco · Senior QA Engineer</title>
   <meta name="description" content="Anwar Orozco, Senior QA Engineer. 8+ years and 18+ projects in manual and automated testing (Playwright, Karate), Salesforce and Agile delivery. Open to Senior QA roles, remote or Chihuahua.">
   <meta name="color-scheme" content="light dark">
@@ -31,10 +31,21 @@
     .icon { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .logo { width: 1em; height: 1em; flex: none; fill: currentColor; }
 
-    main { max-width: 44rem; margin: 0 auto; padding: 3.5rem 1.5rem 4rem; }
+    main {
+      max-width: 44rem; margin: 0 auto;
+      padding: 3.5rem max(1.5rem, env(safe-area-inset-right)) max(4rem, env(safe-area-inset-bottom)) max(1.5rem, env(safe-area-inset-left));
+    }
 
-    /* Header */
-    header { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+    /* Header: mobile-first. DOM order = reading order = tab order on every screen:
+       name/role → availability → contact → downloads. */
+    header { display: grid; grid-template-areas: "id" "status" "contact" "dl"; align-items: start; }
+    header > .id { grid-area: id; }
+    header > .status { grid-area: status; }
+    header > .contact { grid-area: contact; }
+    header > .downloads { grid-area: dl; }
+    @media (min-width: 561px) {
+      header { grid-template-columns: 1fr auto; column-gap: 1rem; grid-template-areas: "id dl" "status status" "contact contact"; }
+    }
     h1 { font-size: 2rem; line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
     .role { margin: .35rem 0 0; color: var(--muted); font-size: 1.05rem; }
     .status { display: flex; align-items: baseline; gap: .5rem; margin: .9rem 0 0; font-size: .92rem; font-weight: 500; }
@@ -42,12 +53,22 @@
     .contact { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; list-style: none; padding: 0; margin: .55rem 0 0; color: var(--muted); font-size: .9rem; }
     .contact li { display: inline-flex; align-items: center; gap: .4rem; }
     .print-btn {
-      display: inline-flex; align-items: center; gap: .4rem; font: inherit; font-size: .85rem;
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem; font: inherit; font-size: .85rem;
       color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 8px;
       padding: .45rem .75rem; cursor: pointer; white-space: nowrap; text-decoration: none;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
     }
     .print-btn:hover { background: var(--chip); color: var(--fg); }
-    .downloads { display: flex; flex-direction: column; gap: .4rem; align-items: stretch; }
+    .print-btn:active { background: var(--chip); }
+    .downloads { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: 1.1rem; }
+    @media (min-width: 561px) {
+      .downloads { grid-template-columns: auto; gap: .4rem; margin-top: 0; }
+    }
+    /* Touch: 44px minimum targets (WCAG 2.5.5) without changing the mouse layout */
+    @media (pointer: coarse) {
+      .print-btn { min-height: 44px; }
+      .contact a, .cta a { display: inline-flex; align-items: center; min-height: 44px; }
+    }
     .summary { margin: 1.5rem 0 0; max-width: 64ch; }
     .num { color: var(--accent); font-weight: 600; }
 
@@ -92,9 +113,8 @@
     .cta a { font-weight: 600; }
 
     @media (max-width: 560px) {
-      main { padding-top: 2rem; }
-      header { flex-direction: column-reverse; }
-      .downloads { flex-direction: row; flex-wrap: wrap; align-self: flex-start; }
+      body { font-size: 16px; }
+      main { padding-top: max(2rem, env(safe-area-inset-top)); }
       .skills { grid-template-columns: 1fr; gap: .3rem; }
       .skills dd + dt { margin-top: .5rem; }
       .duo { grid-template-columns: 1fr; gap: 0; }
@@ -138,10 +158,15 @@
 
 <main>
   <header>
-    <div>
+    <div class="id">
       <h1>Anwar Orozco</h1>
       <p class="role">Senior QA Engineer</p>
     </div>
+    <p class="status">Open to Senior QA roles · Manual &amp; Automation · Remote / Chihuahua</p>
+    <ul class="contact">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chihuahua, Mexico</li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:amot.anly@gmail.com">amot.anly@gmail.com</a></li>
+    </ul>
     <nav class="downloads no-print" aria-label="Download CV">
       <a class="print-btn" href="Anwar-Orozco-CV.pdf" download="Anwar-Orozco-CV.pdf" type="application/pdf">
         <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>CV as PDF
@@ -151,12 +176,6 @@
       </a>
     </nav>
   </header>
-
-  <p class="status">Open to Senior QA roles · Manual &amp; Automation · Remote / Chihuahua</p>
-  <ul class="contact">
-    <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Chihuahua, Mexico</li>
-    <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:amot.anly@gmail.com">amot.anly@gmail.com</a></li>
-  </ul>
 
   <p class="summary"><strong class="num">8+ years</strong> and <strong class="num">18+ projects</strong> in software testing. I combine manual testing with test automation in Playwright and Karate, test Salesforce platforms and lead QA teams in Agile environments.</p>
 
