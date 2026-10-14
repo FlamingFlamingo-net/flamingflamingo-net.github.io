@@ -22,7 +22,7 @@ SUMMARY = ("8+ years and 18+ projects in software testing. I build test automati
 SKILLS = [
     ("Automation & AI", "Playwright, Karate, AI workflow, AI automation, Claude Code"),
     ("Languages & APIs", "TypeScript, JavaScript, SQL, Postman (API testing)"),
-    ("Platforms", "Salesforce, Magento"),
+    ("Platforms & tools", "Salesforce, Magento, Jira"),
     ("QA & Methods", "Test planning, Manual testing, Verification & Validation, BDD, Agile, Scrum"),
 ]
 JOBS = [
