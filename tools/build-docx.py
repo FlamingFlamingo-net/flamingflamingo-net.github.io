@@ -16,20 +16,20 @@ OUT = Path(__file__).resolve().parent.parent / "Anwar-Orozco-CV.docx"
 
 NAME = "Anwar Orozco"
 ROLE = "Senior QA Engineer"
+STATUS = "Open to Senior QA roles · Manual & Automation · Remote / Chihuahua"
 CONTACT = "Chihuahua, Mexico  ·  amot.anly@gmail.com  ·  flamingflamingo-net.github.io"
 SUMMARY = ("8+ years and 18+ projects in software testing. I combine manual testing with test automation in "
            "Playwright and Karate, test Salesforce platforms and lead QA teams in Agile environments.")
 SKILLS = [
-    ("Automation & AI", "Playwright, Karate, AI workflow, AI automation, Claude Code"),
-    ("Languages & APIs", "TypeScript, JavaScript, SQL, Postman (API testing)"),
-    ("Platforms & tools", "Salesforce, Magento, Jira"),
-    ("QA & Methods", "Test planning, Manual testing, Verification & Validation, BDD, Agile, Scrum"),
+    ("Automation & AI", "Playwright, Karate, TypeScript, JavaScript, Claude Code, AI-assisted testing"),
+    ("Testing", "Manual testing, Test planning, API testing (Postman), SQL, Verification & validation, BDD"),
+    ("Platforms & process", "Salesforce, Magento, Jira, Agile, Scrum"),
 ]
 JOBS = [
     ("Senior QA Engineer, Playwright Automation", "Concentrix Catalyst", "Feb 2025 – May 2026",
      "Built a Playwright + TypeScript automation framework from scratch, including custom API verification tools."),
     ("Senior QA Engineer, Salesforce", "Concentrix Catalyst", "Nov 2023 – Feb 2025",
-     "Manual test + test plans and Karate automation for enterprise Salesforce releases. API validation with Postman."),
+     "Manual testing + test plans and Karate automation for enterprise Salesforce releases. API validation with Postman."),
     ("Senior QA Engineer", "Concentrix Catalyst (formerly PK)", "Oct 2019 – Nov 2023",
      "Led a 10-person QA team across 5 projects (12 in total). Test planning, code audits, SQL and API validation."),
     ("Junior QA / Tester", "Gamma Partners", "Feb 2018 – Oct 2019",
@@ -40,6 +40,7 @@ LANGUAGES = "Spanish (Native)  ·  English (C2)"
 
 FG = RGBColor(0x18, 0x18, 0x1B)
 MUTED = RGBColor(0x5F, 0x5F, 0x66)
+ACCENT = RGBColor(0x1D, 0x4E, 0xD8)
 CONTENT_W = Mm(210 - 18 - 18)
 
 
@@ -87,6 +88,7 @@ def build():
 
     run(para(doc, 0), NAME, size=22, bold=True)
     run(para(doc, 4), ROLE, size=12, color=MUTED)
+    run(para(doc, 4), STATUS, size=10, bold=True, color=ACCENT)
     run(para(doc, 8), CONTACT, size=9.5, color=MUTED)
     run(para(doc, 0), SUMMARY)
 
