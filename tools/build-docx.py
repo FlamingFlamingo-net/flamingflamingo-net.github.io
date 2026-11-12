@@ -19,7 +19,7 @@ ROLE = "Senior QA Engineer"
 STATUS = "Open to Senior QA roles · Manual & Automation · Remote / Chihuahua"
 CONTACT = "Chihuahua, Mexico  ·  amot.anly@gmail.com  ·  flamingflamingo-net.github.io"
 SUMMARY = ("8+ years and 18+ projects in software testing. I combine manual testing with test automation in "
-           "Playwright and Karate, test Salesforce platforms and lead QA teams in Agile environments.")
+           "Playwright in Agile environments.")
 SKILLS = [
     ("Automation & AI", "Playwright, Karate, TypeScript, JavaScript, Claude Code, AI-assisted testing"),
     ("Testing", "Manual testing, Test planning, API testing (Postman), SQL, Verification & validation, BDD"),
